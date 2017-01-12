@@ -5,10 +5,10 @@ describe('Example', function(){
 	it('divide should divide bro', function(){
 		expect(divide(25,5)).toBe(5);
 	})
-	it('cannot divide by 0', function(){
+	it('should not be able to divide by 0', function(){
 		expect(divide(25,0)).toBe('Black hoooole');
 	});
-	it('should subtract a - b ', function(){
+	it('should subtract the second value from the first value ', function(){
 		expect(subtract(30, 25)).toBe(5);
 	})
 });
