@@ -39,6 +39,7 @@ module.exports = function(config) {
     plugins: [
       'karma-spec-reporter',
       'karma-jasmine',
+      'karma-phantomjs-launcher',
       'karma-chrome-launcher',
       'karma-coverage'
     ],
