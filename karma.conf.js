@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Sun Jan 08 2017 21:07:36 GMT+0100 (CET)
+// Generated on Thu Jan 12 2017 10:18:42 GMT+0100 (CET)
 
 module.exports = function(config) {
   config.set({
@@ -15,8 +15,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        './src/*.js',
-        './spec/*.js'
+      'src/*.js',
+      'spec/*.js'
     ],
 
 
@@ -27,18 +27,26 @@ module.exports = function(config) {
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {},
+    preprocessors: {
+      'src/**/*.js': ['coverage']
+    },
+
+    coverageReporter: {
+      type : 'html',
+      dir : 'coverage/'
+    },
+    
     plugins: [
+      'karma-spec-reporter',
       'karma-jasmine',
       'karma-chrome-launcher',
-      'karma-spec-reporter'    
-      ],
-
+      'karma-coverage'
+    ],
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['spec'],
+    reporters: ['spec', 'coverage'],
 
 
     // web server port
@@ -65,7 +73,7 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true,
+    singleRun: false,
 
     // Concurrency level
     // how many browser should be started simultaneous
